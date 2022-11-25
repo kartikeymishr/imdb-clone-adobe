@@ -1,0 +1,23 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    width: 80%;
+    padding: 0.95rem;
+
+    border: 2px solid green;
+    border-radius: 8px;
+    outline: none;
+
+    font-size: 1.2rem;
+
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      box-shadow: 0 0 15px green;
+    }
+  }
+}
