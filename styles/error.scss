@@ -1,0 +1,22 @@
+.error {
+  padding: 3rem;
+  font-size: 1.2rem;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: darkred;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  text-align: center;
+
+  width: 50%;
+
+  border: 2px solid crimson;
+  border-radius: 50px;
+
+  box-shadow: 2px 4px 10px;
+}

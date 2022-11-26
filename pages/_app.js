@@ -5,6 +5,7 @@ import "../styles/userhistory.scss";
 import "../styles/movie.scss";
 import "../styles/synopsis.scss";
 import "../styles/spinner.scss";
+import "../styles/error.scss";
 import { Provider } from "react-redux";
 
 import Navbar from "../components/Navbar";

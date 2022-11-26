@@ -1,13 +1,13 @@
+import axios from "axios";
 import {
+  ADD_TO_HISTORY,
+  FETCH_MOVIES_ERROR,
   FETCH_MOVIES_START,
   FETCH_MOVIES_SUCCESS,
-  FETCH_MOVIES_ERROR,
+  FETCH_SYNOPSIS_ERROR,
   FETCH_SYNOPSIS_START,
   FETCH_SYNOPSIS_SUCCESS,
-  FETCH_SYNOPSIS_ERROR,
-  ADD_TO_HISTORY,
 } from "../types";
-import axios from "axios";
 
 export const fetchMovies = (term) => async (dispatch) => {
   dispatch({
@@ -19,8 +19,8 @@ export const fetchMovies = (term) => async (dispatch) => {
     url: "https://imdb8.p.rapidapi.com/auto-complete",
     params: { q: term },
     headers: {
-      "X-RapidAPI-Key": "962c77c3c7msh47089bba1cc3c16p1d5480jsn04488128265f",
-      "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY,
+      "X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPID_API_HOST,
     },
   };
 
@@ -33,16 +33,15 @@ export const fetchMovies = (term) => async (dispatch) => {
       });
     })
     .catch((err) => {
+      console.log(err.response);
       dispatch({
         type: FETCH_MOVIES_ERROR,
-        payload: err,
+        payload: err.response,
       });
     });
 };
 
 export const fetchSynopsis = (id) => async (dispatch) => {
-  console.log("Mock fetchSynopsis API call here with id :: ", id);
-
   dispatch({
     type: FETCH_SYNOPSIS_START,
   });
@@ -52,8 +51,8 @@ export const fetchSynopsis = (id) => async (dispatch) => {
     url: "https://imdb8.p.rapidapi.com/title/get-synopses",
     params: { tconst: id },
     headers: {
-      "X-RapidAPI-Key": "962c77c3c7msh47089bba1cc3c16p1d5480jsn04488128265f",
-      "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY,
+      "X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPID_API_HOST,
     },
   };
 
@@ -66,9 +65,10 @@ export const fetchSynopsis = (id) => async (dispatch) => {
       });
     })
     .catch((err) => {
+      console.log(err.response);
       dispatch({
         type: FETCH_SYNOPSIS_ERROR,
-        payload: err,
+        payload: err.response,
       });
     });
 };

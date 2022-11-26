@@ -1,6 +1,8 @@
+import { createHrefFromUrl } from "next/dist/client/components/reducer";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import ErrorCard from "../../components/ErrorCard";
 import Spinner from "../../components/Spinner";
 import { fetchSynopsis } from "../../store/actions/actions";
 
@@ -15,6 +17,9 @@ const Synopsis = () => {
     (state) => state.movieReducer.movieSynopsis
   );
   const isLoading = useSelector((state) => state.movieReducer.loadingSynopsis);
+  const errorStatusCode = useSelector(
+    (state) => state.movieReducer.errorStatusCode
+  );
 
   useEffect(() => {
     dispatch(fetchSynopsis(movieId));
@@ -32,6 +37,8 @@ const Synopsis = () => {
 
       {isLoading ? (
         <Spinner />
+      ) : errorStatusCode > 0 ? (
+        <ErrorCard />
       ) : (
         <div className="synopsis-info">
           <h4>Synopsis</h4>
