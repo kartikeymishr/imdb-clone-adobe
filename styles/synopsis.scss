@@ -15,6 +15,11 @@
   border-radius: 25px;
   box-shadow: 0 4px 10px c.$color-three;
 
+  img {
+    object-fit: contain;
+    width: 200px;
+  }
+
   h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 3rem;
@@ -24,6 +29,47 @@
     font-family: 'Kanit', sans-serif;
     font-size: 1rem;
     font-weight: 600;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+
+    outline: none;
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+
+    transition: all 0.2s ease-out;
+  }
+
+  .button-on {
+    border-radius: 5px;
+    border: 2px solid c.$color-three;
+    background-color: c.$color-three;
+    color: white;
+
+    &:hover {
+      border-radius: 25px;
+      border: 2px solid c.$color-three;
+      background-color: white;
+      color: c.$color-three;
+    }
+  }
+
+  .button-off {
+    border-radius: 5px;
+    border: 2px solid c.$color-three;
+    background-color: white;
+    color: c.$color-three;
+
+    &:hover {
+      border-radius: 25px;
+      border: 2px solid c.$color-three;
+      background-color: c.$color-three;
+      color: white;
+    }
   }
 }
 

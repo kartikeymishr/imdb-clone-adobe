@@ -6,6 +6,8 @@ import {
   FETCH_SYNOPSIS_START,
   FETCH_SYNOPSIS_SUCCESS,
   FETCH_SYNOPSIS_ERROR,
+  ADD_TO_FAVOURITES,
+  REMOVE_FROM_FAVOURITES,
 } from "../types";
 
 const initialState = {
@@ -16,6 +18,7 @@ const initialState = {
   loadingSynopsis: false,
   error: undefined,
   errorStatusCode: 0,
+  favourites: new Set(),
 };
 
 export default (state = initialState, action) => {
@@ -69,6 +72,14 @@ export default (state = initialState, action) => {
 
       return state;
     }
+    case ADD_TO_FAVOURITES:
+      state.favourites.add(action.payload);
+
+      return state;
+    case REMOVE_FROM_FAVOURITES:
+      state.favourites.delete(action.payload);
+
+      return state;
     default:
       return state;
   }

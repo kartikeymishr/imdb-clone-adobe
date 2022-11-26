@@ -7,6 +7,8 @@ import {
   FETCH_SYNOPSIS_ERROR,
   FETCH_SYNOPSIS_START,
   FETCH_SYNOPSIS_SUCCESS,
+  ADD_TO_FAVOURITES,
+  REMOVE_FROM_FAVOURITES,
 } from "../types";
 
 export const fetchMovies = (term) => async (dispatch) => {
@@ -74,7 +76,13 @@ export const fetchSynopsis = (id) => async (dispatch) => {
 };
 
 export const addToHistory = (movie) => (dispatch) => {
-  console.log("Adding movie to history :: ", movie);
-
   dispatch({ type: ADD_TO_HISTORY, payload: movie });
+};
+
+export const addToFavourites = (movieId) => (dispatch) => {
+  dispatch({ type: ADD_TO_FAVOURITES, payload: movieId });
+};
+
+export const removeFromFavourites = (movieId) => (dispatch) => {
+  dispatch({ type: REMOVE_FROM_FAVOURITES, payload: movieId });
 };
