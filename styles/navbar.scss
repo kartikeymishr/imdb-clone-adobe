@@ -7,9 +7,17 @@
   justify-content: space-between;
   align-items: center;
 
+  backround: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   z-index: 2;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
 }
 
 .nav-logo {
@@ -25,6 +33,10 @@
   list-style: none;
 
   li {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+
     margin: 0 1rem;
     cursor: pointer;
     flex-direction: column;

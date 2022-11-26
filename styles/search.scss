@@ -7,11 +7,13 @@
   input {
     width: 80%;
     padding: 0.95rem;
+    margin-bottom: 20px;
 
     border: 2px solid green;
     border-radius: 8px;
     outline: none;
 
+    font-family: 'Kanit', sans-serif;
     font-size: 1.2rem;
 
     transition: all 0.2s ease-out;

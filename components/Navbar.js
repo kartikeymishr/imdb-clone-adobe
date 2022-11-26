@@ -1,10 +1,12 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 const Navbar = () => {
   return (
     <nav className="nav">
-      <div className="nav-logo">IMDB | Adobe Interview</div>
+      <Link href="/">
+        <div className="nav-logo">IMDB | Adobe Interview</div>
+      </Link>
       <ul className="nav-links">
         <li>
           <Link href="/">Search</Link>

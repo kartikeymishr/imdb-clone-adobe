@@ -1,0 +1,38 @@
+@use "colors" as c;
+
+.synopsis {
+  padding: 6rem 4rem;
+}
+
+.synopsis-movie-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+  }
+
+  p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.synopsis-info {
+  h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+  }
+
+  p {
+    padding: 2rem 8rem;
+    line-height: 1.5;
+
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.5rem;
+  }
+}
