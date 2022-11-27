@@ -28,6 +28,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 }
 
 .nav-links {
@@ -44,5 +48,9 @@
     margin: 0 1rem;
     cursor: pointer;
     flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.8rem;
+    }
   }
 }

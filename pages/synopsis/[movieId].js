@@ -50,8 +50,8 @@ const Synopsis = () => {
     <div className="synopsis">
       <div className="synopsis-movie-info">
         <img src={movie?.i.imageUrl} alt="poster" />
-        <h2>{movie?.l}</h2>
-        <div>
+        <div className="movie-info-right">
+          <h2>{movie?.l}</h2>
           <p>Cast: {movie?.s}</p>
           <p>Release Year: {movie?.y}</p>
           <button
